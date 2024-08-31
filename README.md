@@ -1,35 +1,37 @@
-# Code Repository for submission to the IEEE BioCAS 2024 Grand Challenge on Neural Decoding for Motor Control of non-Human Primates
+# Decoding Finger Velocity from Cortical Spike Trains with Recurrent Spiking Neural Networks
 
-This repository contains the code for the submission to the IEEE BioCAS 2024 Grand Challenge on Neural Decoding for Motor Control of non-Human Primates. 
+This repository contains the code associated with the publication:
 
-Team name: **ZenkeLab-QAAS**
+    Liu, T.*, Gygax, J.*, Rossbroich, J.*, Chua, Y., Zhang, S. and Zenke, F. "Decoding Finger Velocity from Cortical Spike Trains with Recurrent Spiking Neural Networks". arXiv preprint
 
-Team members: **Tengjun Liu, Julia Gygax, Julian Rossbroich**
+Click [here](PLACEHOLDER) to access the preprint.
+
+This data was also submitted to the [IEEE BioCAS 2024 Grand Challenge on Neural Decoding for Motor Control of non-Human Primates](https://ieee-dataport.org/competitions/ieee-biocas-2024-grand-challenge-neural-decoding-motor-control-non-human-primates) under the team name **ZenkeLab-QAAS**, where it achieved the second-highest overall decoding performance and was determined the winner of the **Best Trade-off between R2 score and Solution Complexity** track.
 
 ## About this submission
 
-We have constructed two spiking neural network (SNN) models for the decoding of hand kinematics from neural activity data. The two models correspond to the two tracks of the challenge:
+We have constructed two spiking neural network (SNN) models for the decoding of hand kinematics from neural activity data. The two models serve different purposes:
 
-- `bigRSNN`: a large, high-performance recurrent SNN model for **Track 1** (Obtaining the highest R2 score)
-- `tinyRSNN`: a small, resource-efficient recurrent SNN model for **Track 2** (Obtaining the best trade-off between R2 score and solution complexity)
+- `bigRSNN`: a large, high-performance recurrent SNN model designed to probe the upper limits of decoding performance possible with recurrent SNNs.
+- `tinyRSNN`: a small, resource-efficient recurrent SNN model designed to meet the strict energy and computational constraints of real-time applications in brain-machine interfaces. 
 
 ## Model Descriptions
 
 All models were implemented using the [`stork`](https://github.com/fmi-basel/stork) library for training spiking neural networks and trained using surrogate gradients. Hyperparameters were optimized based on the average validation set performance across all sessions.
 
-### bigRSNN (Track 1)
+### bigRSNN 
 
 The `bigRSNN` model was designed to maximize the R2 score on the validation set regardless of the computational resources required.
 The model consists of a single recurrent spiking neural network (SNN) layer with 1024 LIF neurons. The input size corresponds to the number of electrode channels for each monkey. The readout layer consists of five independent readout heads with 2 leaky integrator readout units each. 
 The final output for X and Y coordinates is obtained by averaging the predictions of the five readout heads. 
 Synaptic and membrane time constants are heteregeneous for each hidden and readout unit and were optimized during training.
 
-### tinyRSNN (Track 2)
+### tinyRSNN 
 
 The `tinyRSNN` model was designed to achieve a good trade-off between R2 score and computational complexity. 
 It consists of a single recurrent spiking neural network (SNN) layer with 64 LIF neurons. 
 The input layer size matches the number of electrode channels for each monkey.
-The readout layer consists of 2 leaky integrator units for each of the X and Y coordinates. 
+The readout layer consists of 2 leaky integrator units, one each for the X and Y coordinates. 
 As in the `bigRSNN` model, synaptic and membrane time constants are heteregeneous for each hidden and readout unit and were optimized during training. 
 
 To further reduce the computational complexity of the `tinyRSNN` model, we applied an additional activity regularization loss acting on hidden layer spike trains during training, which penalizes firing rates above 10 Hz. 
@@ -50,7 +52,7 @@ The code is organized as follows:
 The scripts used for training the submitted models are `train-bigRSNN.py` and `train-tinyRSNN.py`. The evaluation script used to run [NeuroBench](https://github.com/NeuroBench/neurobench) benchmarks is `evaluate.py`. Configuration files for these scripts are located in the `/conf` directory.
 
 #### Results
-The files `results_summary_bigRSNN.json` and `results_summary_tinyRSNN.json` hold a summary of the results as submitted to the challenge (averaged across five random seeds). For results corresponding to individual seeds, please refer to the `/results` folder.
+The files `results_summary_bigRSNN.json` and `results_summary_tinyRSNN.json` hold a summary of the results as submitted to the [IEEE BioCAS 2024 Grand Challenge on Neural Decoding for Motor Control of non-Human Primates](https://ieee-dataport.org/competitions/ieee-biocas-2024-grand-challenge-neural-decoding-motor-control-non-human-primates) (averaged across five random seeds). For results corresponding to individual seeds, please refer to the `/results` folder.
 
 
 ## Installation
@@ -65,7 +67,7 @@ Because `stork` is under continuous development, we recommend installing the exa
 
 ## Reproducing the results
 
-To reproduce the results, first go to the `/conf/data/data-default.yaml` file and set the `data_dir` parameter to the path of the data directory containing the challenge data. Because models are pre-trained on all publicly available sessions where the same number of electrodes were used for each monkey, the data directory should contain all files from the ["Nonhuman Primate Reaching with Multichannel Sensorimotor Cortex Electrophysiology" dataset](https://zenodo.org/records/583331). For only pretraining on the sessions used in the challenge, set **data.pretrain_filenames=challenge-data**.
+To reproduce the results, first go to the `/conf/data/data-default.yaml` file and set the `data_dir` parameter to the path of the data directory containing the challenge data. Because models are pre-trained on all publicly available sessions where the same number of electrodes were used for each monkey, the data directory should contain all files from the ["Nonhuman Primate Reaching with Multichannel Sensorimotor Cortex Electrophysiology" dataset](https://zenodo.org/records/583331). For only pretraining on the sessions used in the [IEEE BioCAS 2024 Grand Challenge on Neural Decoding for Motor Control of non-Human Primates](https://ieee-dataport.org/competitions/ieee-biocas-2024-grand-challenge-neural-decoding-motor-control-non-human-primates), set **data.pretrain_filenames=challenge-data**.
 
 Second, set the output directory for `hydra` in the `/conf/config.yaml` file to the desired output directory. Each run of the training script will create a new subdirectory in the output directory to store configuration files, logs, results, plots, and a copy of model state dictionaries. This defaults to `./outputs`.
 
