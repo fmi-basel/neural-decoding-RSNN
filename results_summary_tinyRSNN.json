@@ -1,0 +1,65 @@
+{
+    "loco_20170210_03": {
+        "footprint": 33288.0,
+        "connection_sparsity": 0.43996,
+        "activation_sparsity": 0.9830958731687811,
+        "dense": 16512.0,
+        "macs": 0.0,
+        "acs": 354.09485332073143,
+        "r2": 0.6220667958259583
+    },
+    "loco_20170215_02": {
+        "footprint": 33288.0,
+        "connection_sparsity": 0.41996,
+        "activation_sparsity": 0.9832411938016907,
+        "dense": 16512.0,
+        "macs": 0.0,
+        "acs": 404.72875863961224,
+        "r2": 0.6077233195304871
+    },
+    "loco_20170301_05": {
+        "footprint": 33288.0,
+        "connection_sparsity": 0.44994000000000006,
+        "activation_sparsity": 0.9820052899169276,
+        "dense": 16512.0,
+        "macs": 0.0,
+        "acs": 426.557992185575,
+        "r2": 0.68994300365448
+    },
+    "indy_20160622_01": {
+        "footprint": 21000.0,
+        "connection_sparsity": 0.46988,
+        "activation_sparsity": 0.983827615917737,
+        "dense": 10368.0,
+        "macs": 0.0,
+        "acs": 299.4919838788655,
+        "r2": 0.7519341588020325
+    },
+    "indy_20160630_01": {
+        "footprint": 21000.0,
+        "connection_sparsity": 0.44986,
+        "activation_sparsity": 0.9853399794311455,
+        "dense": 10368.0,
+        "macs": 0.0,
+        "acs": 196.84190834295072,
+        "r2": 0.5445366978645325
+    },
+    "indy_20170131_02": {
+        "footprint": 21000.0,
+        "connection_sparsity": 0.5,
+        "activation_sparsity": 0.984236007176299,
+        "dense": 10368.0,
+        "macs": 0.0,
+        "acs": 143.19595517691306,
+        "r2": 0.7460524082183838
+    },
+    "average": {
+        "footprint": 27144.0,
+        "connection_sparsity": 0.45493333333333336,
+        "activation_sparsity": 0.9836243265687634,
+        "dense": 13440.0,
+        "macs": 0.0,
+        "acs": 304.15190859077467,
+        "r2": 0.6603760639826456
+    }
+}

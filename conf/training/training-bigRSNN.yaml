@@ -1,0 +1,17 @@
+defaults:
+  - training-default
+
+nb_epochs_train: 200
+nb_epochs_pretrain: 100
+
+# Regularizers
+LB_L2_strength: 100
+LB_L2_thresh: 1e-3
+UB_L2_strength: 0
+UB_L2_thresh: 10     
+
+# LR scheduler
+lr_scheduler: "cosine"  # 'cosine' or None / 'null' are the only options for now
+
+# Learning rate
+lr: 2e-3

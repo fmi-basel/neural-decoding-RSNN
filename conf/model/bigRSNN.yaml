@@ -1,0 +1,52 @@
+name: "bigRSNN"
+
+# Hidden layers
+nb_hidden: 1
+hidden_size: [1024]
+recurrent: [True] 
+
+# Neuron parameters
+tau_mem: 20e-3
+tau_syn: 10e-3
+
+# Stochastic
+stochastic: False
+
+# Dropout
+dropout_p: 0.3
+
+# Heterogenous time constants
+het_timescales: True
+het_timescales_readout: True
+
+learn_timescales: True
+learn_timescales_readout: True
+
+# Delta synapses
+delta_synapses: False
+
+# Readout
+multiple_readouts: True
+
+tau_mem_readout: 50e-3
+tau_syn_readout: 10e-3
+
+readouts:
+  ro1:
+    type: default
+  ro2:
+    type: default
+    tau_syn: 5e-3
+    tau_mem: 20e-3
+  ro3:
+    type: default
+    tau_syn: 20e-3
+    tau_mem: 20e-3
+  ro4:
+    type: default
+    tau_syn: 10e-3
+    tau_mem: 30e-3
+  ro5:
+    type: default
+    tau_syn: 30e-3
+    tau_mem: 100e-3

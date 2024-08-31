@@ -1,0 +1,33 @@
+defaults:
+  - filenames: filenames
+  - pretrain_filenames: all-data
+
+data_dir: "ENTER PATH TO DATA DIRECTORY HERE"
+
+dt: 4e-3  # Time step (seconds)
+nb_outputs: 2  # Number of outputs 
+
+nb_inputs:
+  loco: 192
+  indy: 96
+
+# OPTIONS
+# # # # # # # # 
+
+# Train / Val / Test split
+# By default, the split is 0.5 / 0.25 / 0.25
+# We change that to a X / X / 0.25 split
+
+ratio_val: 0.1    # Ratio of validation set. Train will be 0.75 - ratio_val
+random_val: False  # Whether or not the validation set will be 
+                  # a random subset of the 75 % allocated to train / val
+
+extend_data: True       # Extend data by having samples overlap
+sample_duration: 2.0    # Sample duration (seconds)
+
+remove_segments_inactive: False
+
+# Data augmentation
+p_drop: 0.0  # Probability of dropping a spike    
+p_insert: 0.0  # Probability of inserting a spike
+jitter_sigma: 0.0  # Jitter sigma (in number of time steps)

@@ -1,0 +1,18 @@
+defaults:
+  - defaults
+  - model: tinyRSNN
+  - training: training-tinyRSNN
+  - _self_
+
+# Set pretraining to True to pre-train a model on all sessions from each monkey before training on each session separately
+pretraining: True
+
+# If pretraining is False, you can set the load_state to a path to load a pre-trained model for each monkey
+# If state is not found, a model will be trained from scratch on each session
+load_state: 
+  loco: False
+  indy: False
+
+train_monkeys:
+  - loco
+  - indy

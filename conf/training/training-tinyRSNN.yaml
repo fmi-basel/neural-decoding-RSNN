@@ -1,0 +1,29 @@
+defaults:
+  - training-default
+
+nb_epochs_train: 200
+nb_epochs_pretrain: 100
+
+# Regularizers
+LB_L2_strength: 100
+LB_L2_thresh: 1e-3
+UB_L2_strength: 0.01
+UB_L2_thresh: 10     
+
+# LR scheduler
+lr_scheduler: 'cosine'  # 'cosine' or None / 'null' are the only options for now
+
+# Learning rate
+lr: 2e-3
+
+# pruning
+is_prune: True
+nb_epochs_retrain: 100
+prune_percentage_start: 0.40
+tolerance: 0.02 # how many percentages of performance drop is tolerable, 0.03 -> 3%
+prune_precision: [0.1, 0.05] # The pruning process will go through the list one by one, for example [0.1, 0.05], 
+                             # it will first find the max pruned model of connection sparsity in 0.1 precision (like 50%), when the performance drop is more than the set tolerance,
+                             # it will go to the next precision, i.e., 0.05 (5%) in this case. 
+max_prune_percentage: 0.8
+is_plot_pruning: True
+is_pruning_ver: True

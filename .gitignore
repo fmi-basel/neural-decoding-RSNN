@@ -1,0 +1,9 @@
+data/*
+**/__pycache__/**
+**/matData/**
+*.svg
+*.ods
+**/*.code-workspace
+output/*
+notebooks/*
+.vscode/*

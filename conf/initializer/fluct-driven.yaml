@@ -1,0 +1,6 @@
+# Fluctuation-driven initializer config
+
+sigma_u: 0.5
+nu: 20
+alpha: 0.9
+compute_nu: True

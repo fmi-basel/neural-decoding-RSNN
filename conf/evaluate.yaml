@@ -1,0 +1,28 @@
+defaults:
+  - defaults
+  - model/tinyRSNN@tinyRSNN
+  - model/bigRSNN@bigRSNN
+  - training/training-tinyRSNN@tinyRSNNtraining
+  - training/training-bigRSNN@bigRSNNtraining
+  - _self_
+
+device: "cuda"
+dtype: 'float32'
+
+
+output_dir : ./output
+model_dir: ./models
+
+modelname: 'all'    # 'tinyRSNN' or 'bigRSNN' or 'all'
+
+use_snnTorch_model: False   # Set to True to use the equivalent snnTorch model instead of `stork` model for evaluation
+
+# Benchmarking
+static_metrics:
+  - footprint
+  - connection_sparsity
+
+workload_metrics:
+  - r2
+  - activation_sparsity
+  - synaptic_operations

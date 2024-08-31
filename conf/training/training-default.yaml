@@ -1,0 +1,16 @@
+# Defaults for training
+SG_beta: 20    # beta for SG
+
+# Training
+batchsize: 250
+
+# Loss
+loss: "RMSE"     
+mask_early_timesteps: False
+nb_masked_timesteps: 20
+
+# Optimizer
+optimizer: "SMORMS3"    # 'SMORMS3' or 'adam'
+
+# Output
+verbose: True

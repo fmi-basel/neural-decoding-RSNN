@@ -1,0 +1,20 @@
+numpy
+torch
+scipy
+matplotlib
+seaborn         
+h5py            
+soundfile       
+tables
+torchaudio
+torchvision
+tonic
+xlsxwriter
+hydra-core
+neurobench
+pandas
+snntorch
+omegaconf
+KDEpy
+-e git+https://github.com/fmi-basel/stork.git#egg=stork
+git+https://github.com/fzenke/randman

@@ -1,0 +1,65 @@
+{
+    "loco_20170210_03": {
+        "footprint": 5029968.0,
+        "connection_sparsity": 0.0,
+        "activation_sparsity": 0.9676857701683994,
+        "dense": 1255424.0,
+        "macs": 0.0,
+        "acs": 44664.16492347959,
+        "r2": 0.6981177210807801
+    },
+    "loco_20170215_02": {
+        "footprint": 5029968.0,
+        "connection_sparsity": 0.0,
+        "activation_sparsity": 0.9674195645365966,
+        "dense": 1255424.0,
+        "macs": 0.0,
+        "acs": 45945.224970929085,
+        "r2": 0.6286545395851135
+    },
+    "loco_20170301_05": {
+        "footprint": 5029968.0,
+        "connection_sparsity": 0.0,
+        "activation_sparsity": 0.9686387346439508,
+        "dense": 1255424.0,
+        "macs": 0.0,
+        "acs": 45188.60822978633,
+        "r2": 0.7340290784835816
+    },
+    "indy_20160622_01": {
+        "footprint": 4636752.0,
+        "connection_sparsity": 0.0,
+        "activation_sparsity": 0.9622453838303702,
+        "dense": 1157120.0,
+        "macs": 0.0,
+        "acs": 48096.893644205054,
+        "r2": 0.7696943163871766
+    },
+    "indy_20160630_01": {
+        "footprint": 4636752.0,
+        "connection_sparsity": 0.0,
+        "activation_sparsity": 0.9718162302862421,
+        "dense": 1157120.0,
+        "macs": 0.0,
+        "acs": 34837.33860243476,
+        "r2": 0.5847989797592164
+    },
+    "indy_20170131_02": {
+        "footprint": 4636752.0,
+        "connection_sparsity": 0.0,
+        "activation_sparsity": 0.9721470606135831,
+        "dense": 1157120.0,
+        "macs": 0.0,
+        "acs": 33288.93294189884,
+        "r2": 0.7717169880867004
+    },
+    "average": {
+        "footprint": 4833360.0,
+        "connection_sparsity": 0.0,
+        "activation_sparsity": 0.9683254573465238,
+        "dense": 1206272.0,
+        "macs": 0.0,
+        "acs": 42003.52721878894,
+        "r2": 0.6978352705637613
+    }
+}

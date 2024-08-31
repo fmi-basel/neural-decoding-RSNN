@@ -1,0 +1,15 @@
+defaults:
+  - hydra: default
+  - initializer: fluct-driven
+  - data: data-default
+  - evaluation: eval-default
+  - plotting: plot_all
+  - _self_
+
+dtype: 'float32'
+device: "cuda"
+nb_workers: 2
+
+output_dir : ./output
+
+seed: False

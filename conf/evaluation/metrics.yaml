@@ -1,0 +1,2 @@
+static_metrics: ["footprint", "connection_sparsity"]
+workload_metrics: ["r2", "activation_sparsity", "synaptic_operations"] # "MSE"]

@@ -1,0 +1,3 @@
+plot_training: True
+plot_cumulative_mse: False
+plot_snapshots: True

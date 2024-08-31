@@ -1,0 +1,35 @@
+name: "tinyRSNN"
+
+# Hidden layers
+nb_hidden: 1
+hidden_size: [64]
+recurrent: [True] 
+
+# Readout
+multiple_readouts: False
+
+tau_mem_readout: 50e-3
+tau_syn_readout: 10e-3
+
+# Neuron parameters
+tau_mem: 20e-3
+tau_syn: 10e-3
+
+# Stochastic
+stochastic: False
+
+# Dropout
+dropout_p: 0.3
+
+# Heterogenous time constants
+het_timescales: True
+het_timescales_readout: True
+
+learn_timescales: True
+learn_timescales_readout: True
+
+# Delta synapses
+delta_synapses: False
+
+# half precision
+is_half: True
