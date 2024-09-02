@@ -16,5 +16,5 @@ pandas
 snntorch
 omegaconf
 KDEpy
--e git+https://github.com/fmi-basel/stork.git#egg=stork
+-e git+https://github.com/fmi-basel/stork.git@40c68fe
 git+https://github.com/fzenke/randman
